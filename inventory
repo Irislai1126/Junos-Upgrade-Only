@@ -1,0 +1,6 @@
+MX480-1 ansible_host=172.16.110.66 target_junos="junos-install-mx-x86-64-17.4R1.16.tgz"
+
+[all:vars]
+ansible_connection="netconf"
+ansible_user="nexus.xi"
+ansible_password="123!@#qweQWE"

@@ -1,0 +1,18 @@
+---
+- name: Junos Upgrade
+  hosts: all
+  roles:
+    - Juniper.junos
+  gather_facts: no
+
+  tasks:
+  - name: Execute a basic Junos software upgrade.
+    juniper_junos_software:
+      host: "{{ansible_host}}"
+      cleanfs: false
+      local_package: "./{{target_junos}}"
+    register: response
+
+  - name: Print the complete response.
+    debug:
+      var: response
